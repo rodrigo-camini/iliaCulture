@@ -1,0 +1,499 @@
+{
+	"info": {
+		"_postman_id": "f242d826-bdac-4104-b3c2-f40eaabe7a69",
+		"name": "api v2 Free Tier",
+		"description": "# Introduction\nThe purpose of the football-data API is to provide football data in a machine readable way.\n\n# Overview\nn/a\n\n# Authentication\nYou have to pass a custom HTTP header\n\n# Error Codes\n403 - You don't have permission to view that resource.\n404 - You called a non-existent endpoint.\n429 - You should lower your results, you got rate limited.\n\n# Rate limit\nSee www.football-data.org/documentation/api#request-throttling for detailed information on rate limits. They depend on your plan.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Competition / Match SubResource",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"Content-Type is present\"] = postman.getResponseHeader(\"Content-Type\");",
+							"tests[\"Client is authenticated\"] = postman.getResponseHeader(\"X-Authenticated-Client\") !== 'anonymous';",
+							"tests[\"API-Version header set\"] = postman.getResponseHeader(\"X-API-Version\") === 'v2';",
+							"tests[\"X-Requests-Available > 0\"] = postman.getResponseHeader(\"X-Requests-Available-Minute\") > 0;",
+							"tests[\"X-RequestCounter-Reset > 0\"] = postman.getResponseHeader(\"X-RequestCounter-Reset\") > 0;"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-Auth-Token",
+						"value": ""
+					}
+				],
+				"url": {
+					"raw": "https://api.football-data.org/v2/competitions/2001/matches",
+					"protocol": "https",
+					"host": [
+						"api",
+						"football-data",
+						"org"
+					],
+					"path": [
+						"v2",
+						"competitions",
+						"2001",
+						"matches"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Competition / Team Subresource",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"Content-Type is present\"] = postman.getResponseHeader(\"Content-Type\");",
+							"tests[\"Client is authenticated\"] = postman.getResponseHeader(\"X-Authenticated-Client\") !== 'anonymous';",
+							"tests[\"API-Version header set\"] = postman.getResponseHeader(\"X-API-Version\") === 'v2';",
+							"tests[\"X-Requests-Available > 0\"] = postman.getResponseHeader(\"X-Requests-Available-Minute\") > 0;",
+							"tests[\"X-RequestCounter-Reset > 0\"] = postman.getResponseHeader(\"X-RequestCounter-Reset\") > 0;"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-Auth-Token",
+						"value": ""
+					}
+				],
+				"url": {
+					"raw": "https://api.football-data.org/v2/competitions/2024/teams",
+					"protocol": "https",
+					"host": [
+						"api",
+						"football-data",
+						"org"
+					],
+					"path": [
+						"v2",
+						"competitions",
+						"2024",
+						"teams"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Team Resource",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"Content-Type is present\"] = postman.getResponseHeader(\"Content-Type\");",
+							"tests[\"Client is authenticated\"] = postman.getResponseHeader(\"X-Authenticated-Client\") !== 'anonymous';",
+							"tests[\"API-Version header set\"] = postman.getResponseHeader(\"X-API-Version\") === 'v2';",
+							"tests[\"X-Requests-Available > 0\"] = postman.getResponseHeader(\"X-Requests-Available-Minute\") > 0;",
+							"tests[\"X-RequestCounter-Reset > 0\"] = postman.getResponseHeader(\"X-RequestCounter-Reset\") > 0;"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-Auth-Token",
+						"value": ""
+					}
+				],
+				"url": {
+					"raw": "https://api.football-data.org/v2/teams/18",
+					"protocol": "https",
+					"host": [
+						"api",
+						"football-data",
+						"org"
+					],
+					"path": [
+						"v2",
+						"teams",
+						"18"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Team / Match Subresource",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"Content-Type is present\"] = postman.getResponseHeader(\"Content-Type\");",
+							"tests[\"Client is authenticated\"] = postman.getResponseHeader(\"X-Authenticated-Client\") !== 'anonymous';",
+							"tests[\"API-Version header set\"] = postman.getResponseHeader(\"X-API-Version\") === 'v2';",
+							"tests[\"X-Requests-Available > 0\"] = postman.getResponseHeader(\"X-Requests-Available-Minute\") > 0;",
+							"tests[\"X-RequestCounter-Reset > 0\"] = postman.getResponseHeader(\"X-RequestCounter-Reset\") > 0;"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-Auth-Token",
+						"value": ""
+					}
+				],
+				"url": {
+					"raw": "http://api.football-data.org/v2/teams/19/matches",
+					"protocol": "http",
+					"host": [
+						"api",
+						"football-data",
+						"org"
+					],
+					"path": [
+						"v2",
+						"teams",
+						"19",
+						"matches"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Match Resource (AUTH)",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"value": "44b2755e896a44dbacf6b8f8b7f22989"
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic emFrZG9la2plcjpmdjIyZ2IzMw=="
+							}
+						],
+						"url": {
+							"raw": "http://staging-api.football-data.org/v2/matches/200000",
+							"protocol": "http",
+							"host": [
+								"staging-api",
+								"football-data",
+								"org"
+							],
+							"path": [
+								"v2",
+								"matches",
+								"200000"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true",
+							"name": "Access-Control-Allow-Credentials",
+							"description": "Indicates whether or not the response to the request can be exposed when the credentials flag is true. When used as part of a response to a preflight request, this indicates whether or not the actual request can be made using credentials."
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET",
+							"name": "Access-Control-Allow-Methods",
+							"description": "Specifies the method or methods allowed when accessing the resource. This is used in response to a preflight request."
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*",
+							"name": "Access-Control-Allow-Origin",
+							"description": "Specifies a URI that may access the resource. For requests without credentials, the server may specify '*' as a wildcard, thereby allowing any origin to access the resource."
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive",
+							"name": "Connection",
+							"description": "Options that are desired for the connection"
+						},
+						{
+							"key": "Content-Language",
+							"value": "en-US",
+							"name": "Content-Language",
+							"description": "The language the content is in"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=UTF-8",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 14 Jun 2018 14:59:56 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "Server",
+							"value": "nginx/1.6.2",
+							"name": "Server",
+							"description": "A name for the server"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked",
+							"name": "Transfer-Encoding",
+							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+						},
+						{
+							"key": "X-API-Version",
+							"value": "v2",
+							"name": "X-API-Version",
+							"description": "Custom header"
+						},
+						{
+							"key": "X-Application-Context",
+							"value": "application:production",
+							"name": "X-Application-Context",
+							"description": "Custom header"
+						},
+						{
+							"key": "X-Authenticated-Client",
+							"value": "daniel",
+							"name": "X-Authenticated-Client",
+							"description": "Custom header"
+						},
+						{
+							"key": "X-RequestCounter-Reset",
+							"value": "60",
+							"name": "X-RequestCounter-Reset",
+							"description": "Custom header"
+						},
+						{
+							"key": "X-Requests-Available-Minute",
+							"value": "29",
+							"name": "X-Requests-Available-Minute",
+							"description": "Custom header"
+						}
+					],
+					"cookie": [],
+					"body": "{\"id\":200000,\"competition\":{\"id\":2000,\"name\":\"FIFA World Cup\"},\"utcDate\":\"2018-06-14T15:00Z\",\"lastUpdated\":\"2018-06-14T16:05Z\",\"status\":\"SCHEDULED\",\"matchday\":1,\"stage\":\"GROUP_STAGE\",\"referees\":[{\"id\":49485,\"name\":\"Néstor Pitana\",\"nationality\":null},{\"id\":49486,\"name\":\"Juan Pablo Belatti\",\"nationality\":null},{\"id\":49487,\"name\":\"Hernán Maidana\",\"nationality\":null},{\"id\":49488,\"name\":\"Sandro Ricci\",\"nationality\":null},{\"id\":49526,\"name\":\"Emerson de Carvalho\",\"nationality\":null},{\"id\":11054,\"name\":\"Massimiliano Irrati\",\"nationality\":null},{\"id\":49527,\"name\":\"Mauro Vigliano\",\"nationality\":null},{\"id\":49528,\"name\":\"Carlos Astroza\",\"nationality\":null},{\"id\":11116,\"name\":\"Daniele Orsato\",\"nationality\":null}],\"minute\":null,\"homeTeam\":{\"id\":808,\"name\":\"Russia\",\"coach\":{\"id\":null,\"name\":null,\"countryOfBirth\":null,\"nationality\":null},\"captain\":{\"id\":null,\"name\":null,\"shirtNumber\":null},\"lineup\":[],\"bench\":[]},\"awayTeam\":{\"id\":801,\"name\":\"Saudi Arabia\",\"coach\":{\"id\":43782,\"name\":\"Pizzi\",\"countryOfBirth\":\"Argentina\",\"nationality\":\"Spain\"},\"captain\":{\"id\":null,\"name\":null,\"shirtNumber\":null},\"lineup\":[{\"id\":3576,\"name\":\"Salman Al Faraj\",\"position\":\"Midfielder\",\"shirtNumber\":7},{\"id\":3567,\"name\":\"Yasir Al Shahrani\",\"position\":\"Defender\",\"shirtNumber\":13},{\"id\":3574,\"name\":\"Salem Al Dawsari\",\"position\":\"Midfielder\",\"shirtNumber\":18},{\"id\":3579,\"name\":\"Abdullah Otayf\",\"position\":\"Midfielder\",\"shirtNumber\":14},{\"id\":3570,\"name\":\"Mohammed Al Burayk\",\"position\":\"Defender\",\"shirtNumber\":6},{\"id\":3560,\"name\":\"Abdullah Al Muaiouf\",\"position\":\"Goalkeeper\",\"shirtNumber\":1},{\"id\":3566,\"name\":\"Osama Hawsawi\",\"position\":\"Defender\",\"shirtNumber\":3},{\"id\":3575,\"name\":\"Taiseer Al Jassim\",\"position\":\"Midfielder\",\"shirtNumber\":17},{\"id\":3584,\"name\":\"Mohammed Al Sahlawi\",\"position\":\"Attacker\",\"shirtNumber\":10},{\"id\":3565,\"name\":\"Omar Hawsawi\",\"position\":\"Defender\",\"shirtNumber\":5},{\"id\":43781,\"name\":\"Yahia Al Shehri\",\"position\":\"Midfielder\",\"shirtNumber\":8}],\"bench\":[{\"id\":3564,\"name\":\"Motaz Hawsawi\",\"position\":\"Defender\",\"shirtNumber\":23},{\"id\":3572,\"name\":\"Abdulmalek Al Khaibri\",\"position\":\"Midfielder\",\"shirtNumber\":11},{\"id\":3585,\"name\":\"Muhannad Asiri\",\"position\":\"Attacker\",\"shirtNumber\":20},{\"id\":3578,\"name\":\"Hussain Al Moqahwi\",\"position\":\"Midfielder\",\"shirtNumber\":16},{\"id\":3582,\"name\":\"Hattan Babhir\",\"position\":\"Midfielder\",\"shirtNumber\":9},{\"id\":32956,\"name\":\"Fahad Al Muwallad\",\"position\":\"Attacker\",\"shirtNumber\":19},{\"id\":3561,\"name\":\"Mohammed Al Owais\",\"position\":\"Goalkeeper\",\"shirtNumber\":22},{\"id\":3563,\"name\":\"Mansour Al Harbi\",\"position\":\"Defender\",\"shirtNumber\":2},{\"id\":3562,\"name\":\"Yasser Al Mosailem\",\"position\":\"Goalkeeper\",\"shirtNumber\":21},{\"id\":3571,\"name\":\"Ali Al Bulayhi\",\"position\":\"Defender\",\"shirtNumber\":4},{\"id\":3580,\"name\":\"Mohamed Kanno\",\"position\":\"Midfielder\",\"shirtNumber\":12},{\"id\":3583,\"name\":\"Abdullah Al Khaibari\",\"position\":\"Midfielder\",\"shirtNumber\":15}]},\"score\":{\"winner\":null,\"duration\":\"REGULAR\",\"halfTime\":{\"homeTeam\":null,\"awayTeam\":null},\"fullTime\":{\"homeTeam\":null,\"awayTeam\":null},\"extraTime\":{\"homeTeam\":null,\"awayTeam\":null},\"penalties\":{\"homeTeam\":null,\"awayTeam\":null}},\"goals\":[],\"bookings\":[],\"substitutions\":[]}"
+				}
+			]
+		},
+		{
+			"name": "Match List Resource",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"Content-Type is present\"] = postman.getResponseHeader(\"Content-Type\");",
+							"tests[\"Client is authenticated\"] = postman.getResponseHeader(\"X-Authenticated-Client\") === 'daniel';",
+							"tests[\"API-Version header set\"] = postman.getResponseHeader(\"X-API-Version\") === 'v2';",
+							"tests[\"X-Requests-Available > 0\"] = postman.getResponseHeader(\"X-Requests-Available-Minute\") > 0;",
+							"tests[\"X-RequestCounter-Reset > 0\"] = postman.getResponseHeader(\"X-RequestCounter-Reset\") > 0;"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-Auth-Token",
+						"value": ""
+					}
+				],
+				"url": {
+					"raw": "http://api.football-data.org/v2/matches",
+					"protocol": "http",
+					"host": [
+						"api",
+						"football-data",
+						"org"
+					],
+					"path": [
+						"v2",
+						"matches"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Match Resource",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"Content-Type is present\"] = postman.getResponseHeader(\"Content-Type\");",
+							"tests[\"Client is authenticated\"] = postman.getResponseHeader(\"X-Authenticated-Client\") !== 'anonymous';",
+							"tests[\"API-Version header set\"] = postman.getResponseHeader(\"X-API-Version\") === 'v2';",
+							"tests[\"X-Requests-Available > 0\"] = postman.getResponseHeader(\"X-Requests-Available-Minute\") > 0;",
+							"tests[\"X-RequestCounter-Reset > 0\"] = postman.getResponseHeader(\"X-RequestCounter-Reset\") > 0;"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-Auth-Token",
+						"value": ""
+					}
+				],
+				"url": {
+					"raw": "https://api.football-data.org/v2/matches/233445",
+					"protocol": "https",
+					"host": [
+						"api",
+						"football-data",
+						"org"
+					],
+					"path": [
+						"v2",
+						"matches",
+						"233445"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Competition / Team Subresource",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"Content-Type is present\"] = postman.getResponseHeader(\"Content-Type\");",
+							"tests[\"Client is authenticated\"] = postman.getResponseHeader(\"X-Authenticated-Client\") !== 'anonymous';",
+							"tests[\"API-Version header set\"] = postman.getResponseHeader(\"X-API-Version\") === 'v2';",
+							"tests[\"X-Requests-Available > 0\"] = postman.getResponseHeader(\"X-Requests-Available-Minute\") > 0;",
+							"tests[\"X-RequestCounter-Reset > 0\"] = postman.getResponseHeader(\"X-RequestCounter-Reset\") > 0;"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-Auth-Token",
+						"value": ""
+					}
+				],
+				"url": {
+					"raw": "https://api.football-data.org/v2/competitions/2001/teams",
+					"protocol": "https",
+					"host": [
+						"api",
+						"football-data",
+						"org"
+					],
+					"path": [
+						"v2",
+						"competitions",
+						"2001",
+						"teams"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Player Resource",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"Content-Type is present\"] = postman.getResponseHeader(\"Content-Type\");",
+							"tests[\"Client is authenticated\"] = postman.getResponseHeader(\"X-Authenticated-Client\") !== 'anonymous';",
+							"tests[\"API-Version header set\"] = postman.getResponseHeader(\"X-API-Version\") === 'v2';",
+							"tests[\"X-Requests-Available > 0\"] = postman.getResponseHeader(\"X-Requests-Available-Minute\") > 0;",
+							"tests[\"X-RequestCounter-Reset > 0\"] = postman.getResponseHeader(\"X-RequestCounter-Reset\") > 0;"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-Auth-Token",
+						"value": ""
+					}
+				],
+				"url": {
+					"raw": "https://api.football-data.org/v2/players/44",
+					"protocol": "https",
+					"host": [
+						"api",
+						"football-data",
+						"org"
+					],
+					"path": [
+						"v2",
+						"players",
+						"44"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
